@@ -1,0 +1,19 @@
+.cell {
+  aspect-ratio: 1/1;
+  background-color: #d0dbe7;
+  border: 2px solid #a6adb4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.board {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
