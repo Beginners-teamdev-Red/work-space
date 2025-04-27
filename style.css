@@ -1,56 +1,63 @@
-html body {
-  font-family: "Noto Sans JP", sans-serif;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board > .row {
+  display: flex;
 }
 
 .cell {
-  width: 130px;
-  height: 130px;
-  aspect-ratio: 1/1;
-  background-color: #d0dbe7;
-  border: 2px solid #a6adb4;
-  border-radius: 8px;
+  position: relative;
+  width: 120px;
+  height: 120px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  align-items: center;
+  font-size: 80px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease; 
-  position: relative;
+  border: none;
+}
+
+.board .row:not(:last-child) .cell {
+  border-bottom: 3px solid #000;
+}
+
+.row .cell:not(:last-child) {
+  border-right: 3px solid #000;
 }
 
 .cell:empty:hover::before {
   content: attr(data-hover-mark);
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0.2); 
+  align-items: center;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.2);
   pointer-events: none;
 }
 
-.container {
-  padding-bottom: 0 !important;
-}
-
-.board {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.x-mark {
-}
-
-.o-mark {
-}
-
-#turn-display {
-  font-size: 2.5rem;
+.turn-display {
+  margin-top: 32px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
-  padding: 0px;
-  margin-top: 0px;
 }
