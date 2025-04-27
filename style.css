@@ -3,6 +3,8 @@ html body {
 }
 
 .cell {
+  width: 130px;
+  height: 130px;
   aspect-ratio: 1/1;
   background-color: #d0dbe7;
   border: 2px solid #a6adb4;
@@ -13,7 +15,24 @@ html body {
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+  position: relative;
+}
+
+.cell:empty:hover::before {
+  content: attr(data-hover-mark);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.2); 
+  pointer-events: none;
+}
+
+.container {
+  padding-bottom: 0 !important;
 }
 
 .board {
@@ -28,6 +47,10 @@ html body {
 .o-mark {
 }
 
-#status {
-  min-height: 3em;
+#turn-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px;
+  margin-top: 0px;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tic Tac Toe</title>
+    <title>Documents</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -12,11 +12,8 @@
     />
   </head>
   <body>
-    <div
-      class="container vh-100 d-flex flex-column justify-content-center align-items-center"
-    >
-      <h1 class="text-center">三目並べゲーム</h1>
-      <div class="mt-4" id="status"></div>
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <h1 class="text-center">Tic Tac Toe</h1>
       <div class="board w-50 mx-auto" id="board">
         <div class="row">
           <div class="col-4 cell" data-index="0"></div>
@@ -36,6 +33,11 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="turn-display"></div>
+    
+    <script type="module" src="./js/handleCellClick.js"></script>
+    <script type="module" src="./js/dispalyTurn.js"></script>
+    <script type="module" src="./js/gameReset.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
